@@ -25,3 +25,5 @@ docker-compose exec web python manage.py collectstatic --no-input
 
 # Автор проекта:
 Тарасов Алексей
+
+[![yamdb_workflow Actions Status](https://github.com/AlexTarasovPY/yamdb_final/workflows/yamdb_workflow/badge.svg)](https://github.com/AlexTarasovPY/yamdb_final/actions)
