@@ -9,16 +9,17 @@
 
 # Используемые технологии:
 Dgango Rest Framework, nginx, gunicorn
-Требуется установка Docker
+Требуется установка Docker compose
 # Описание эндпойнтов и форматы данных:
 http://localhost/redoc/
 
 # Скачать проект:
 git clone git@github.com:AlexTarasovPY/infra_sp2.git
 # Развернуть проект:
-docker-compose up -d --build 
+При выполнении push в гитхаб проект автоматически разворачивается на указанном сервере.
+Образ web-приложения копируется в docker hub.
+После успешного завершения workflow на сервере необходимо выполнить следующие команды:
 
-# Выполнить миграции, создать суперпользователя и собрать статику:
 docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py createsuperuser
 docker-compose exec web python manage.py collectstatic --no-input
@@ -26,4 +27,4 @@ docker-compose exec web python manage.py collectstatic --no-input
 # Автор проекта:
 Тарасов Алексей
 
-[![yamdb_workflow Actions Status](https://github.com/AlexTarasovPY/yamdb_final/workflows/yamdb_workflow/badge.svg)](https://github.com/AlexTarasovPY/yamdb_final/actions)
+![yamdb_workflow Actions Status](https://github.com/AlexTarasovPY/yamdb_final/workflows/yamdb_workflow/badge.svg)](https://github.com/AlexTarasovPY/yamdb_final/actions)
