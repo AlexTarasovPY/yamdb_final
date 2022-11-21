@@ -5,7 +5,7 @@ services:
   db:
     image: postgres:13.0-alpine
     volumes:
-      - /var/lib/postgresql/data/
+      - postgres_db:/var/lib/postgresql/data/
     env_file:
       - ./.env
   web:
@@ -27,7 +27,7 @@ services:
       - "80:80"
 
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - postgres_db:./nginx/default.conf:/etc/nginx/conf.d/default.conf
 
       - static_value:/var/html/static/
 
