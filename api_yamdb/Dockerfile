@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . .
 
+COPY /static .
+
 
 RUN pip3 install -r requirements.txt --no-cache-dir
 
